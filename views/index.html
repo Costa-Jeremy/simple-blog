@@ -1,5 +1,96 @@
-doctype html 
-head
-  title XXX
-body
-  Hello world
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Accueil</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+
+
+    </head>
+
+    <body>
+     
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Le blog de Jérémy</a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarResponsive" style="">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+        <!-- Page Content -->
+        <div class="container" style="padding-top: 5%;">
+
+            <div class="row">
+           
+                <!-- Blog Entries Column -->
+                <div class="col-md-8">
+                <a href="/post/create" class="btn btn-primary">Ajouter un article</a>
+               
+                   each val in articles
+
+                    <!-- Blog Post -->
+                        <div class="card mb-4">
+                        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title">#{val.titre}</h2>
+                            <p class="card-text">#{val.resume}</p>
+                            <a href="/post/#{val._id}" class="btn btn-primary">Read More →</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Posted #{val.date} by #{val.auteur}  <a href="/post/like/#{val._id}/#{val.like}" class="btn btn-success">Like</a>   #{val.like} like(s)                      
+                        </div>
+                    </div>
+
+                   
+
+
+                    
+               
+                </div>
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark" style="left: 0; bottom: 0;position:relative;width: 100%;">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright © Jérémy 2018</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+
+
+
+
+    </body>
+</html>

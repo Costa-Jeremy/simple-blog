@@ -1,0 +1,120 @@
+
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>#{article.titre}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Le blog de Jérémy</a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarResponsive" style="">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container" style="padding-top: 5%;">
+
+
+            <div class="row">
+
+
+
+
+                <!-- Blog Entries Column -->
+                <div class="col-md-8">
+
+
+                    <h1> #{article.titre} </h1>
+                    <div>#{article.date} by  #{article.auteur}</div>
+
+                    <div>#{article.article}</div>
+
+                </div>
+
+                <a style="height:50px;" href="/postD/#{article._id}" class="btn btn-primary">Supprimer l'article</a>
+            </div>
+           
+            
+            <h1> Ajout d'un commentaire : </h1>
+            <form action="/post/addCom" method="post" id="form">
+                <input id="prodId" name="id" type="hidden" value="#{article._id}">
+                <div class="form-group">
+                    <label for="nom">Nom : </label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prenom : </label>
+                    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Votre prénom">
+                </div>
+
+                <div class="form-group">
+                    <label for="article">Commentaire : </label>
+                    <textarea class="form-control" id="commentaire" name="commentaire" rows="5"></textarea>
+                </div>
+                <button type="submit" form="form" value="Submit">Ajouter le commentaire</button>
+            </form>
+
+            <h1>Commentaires des utilisateurs : </h1>
+            each val in commentaires
+
+                <div><b> #{val.date} by #{val.auteur} </b></div>
+                <div>#{val.commentaire}</div>   
+                <br />
+
+
+
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark" style="left: 0; bottom: 0;position:relative;width: 100%;">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright © Jérémy 2018</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+
+
+
+    </body>
+
+</html>
+
+
+
+
