@@ -31,7 +31,7 @@ _Note: il faudra un identifiant unique pour chaque article !_
 Faire une page web permettant d'afficher la liste des articles. Bonus si la pagination est gérée.
 La page devra s'afficher à la route `*/*`
 
-Quel verbe HTTP utiliser ?
+Quel verbe HTTP utiliser ? GET
 
 ## Afficher un article
 
@@ -39,13 +39,13 @@ Faire en sorte qu'un article avec l'identifiant unique ID s'affiche à la route 
 
 ## Entrer un article
 
-Créer un formulaire pour taper un article sur la route `*/post/create*`
-Le formulaire devra enclencher une action sur la même route, quel verbe HTTP utiliser?
+Créer un formulaire pour taper un article sur la route `*/post/create*`  
+Le formulaire devra enclencher une action sur la même route, quel verbe HTTP utiliser? POST
 
 
 ## Supprimer un article
 
-Ajouter une route `*/post?<ID>>*` pour supprimer un article, quel verbe HTTP utiliser.`
+Ajouter une route `*/post?<ID>>*` pour supprimer un article, quel verbe HTTP utiliser.GET
 
 ## Permettre la suppression d'un article
 
